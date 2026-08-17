@@ -1,2 +1,7 @@
-body {background-color:pink;colour:black;}
+{box sizing: border-box;}
+body{margin: 0;
+     font-family: Arial, sans-serif;}
+  body {background-color:pink;colour:black;}
 h1{font sze:100px;}
+section{padding:60px;}
+section{margin bottom: 100px;}
