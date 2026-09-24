@@ -51,36 +51,44 @@ magnifier.style.backgroundImage =
 
 });
 
+if (viewerImageContainer && magnifier) {
+
+    viewerImageContainer.addEventListener("mousemove", function (event) {
+
+        const rect = viewerImageContainer.getBoundingClientRect();
+
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+
+        magnifier.style.left = x + "px";
+        magnifier.style.top = y + "px";
+
+        const zoom = 2;
+
+        magnifier.style.backgroundSize =
+            viewerImageContainer.offsetWidth * zoom + "px " +
+            viewerImageContainer.offsetHeight * zoom + "px";
+
+        magnifier.style.backgroundPosition =
+            (-x * zoom + magnifier.offsetWidth / 2) + "px " +
+            (-y * zoom + magnifier.offsetHeight / 2) + "px";
+
+    });
+
+}
+
+ 
 
 
-viewerImageContainer.addEventListener("mousemove", function (event) {
 
-    const rect = viewerImageContainer.getBoundingClientRect();
+if (closeButton && viewer) {
 
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
+    closeButton.addEventListener("click", function () {
+        viewer.classList.remove("open");
+    });
 
-    magnifier.style.left = x + "px";
-    magnifier.style.top = y + "px";
+}
 
-    const zoom = 2;
-
-    magnifier.style.backgroundSize =
-        viewerImageContainer.offsetWidth * zoom + "px " +
-        viewerImageContainer.offsetHeight * zoom + "px";
-
-    magnifier.style.backgroundPosition =
-        (-x * zoom + magnifier.offsetWidth / 2) + "px " +
-        (-y * zoom + magnifier.offsetHeight / 2) + "px";
-
-});
-
-
-closeButton.addEventListener("click", function () {
-
-    viewer.classList.remove("open");
-
-});
 
 
 window.addEventListener("scroll", function () {
@@ -150,3 +158,14 @@ paintings.forEach(function (painting) {
 gallery.style.height=(Math.max(...columnHeights)-gap) + "px";
     }
 window.addEventListener("load", arrangeGallery);
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".navlinks");
+
+
+if (menuToggle && navLinks) {
+
+    menuToggle.addEventListener("click", function () {
+        navLinks.classList.toggle("open");
+    });
+
+}
