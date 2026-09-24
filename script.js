@@ -76,7 +76,52 @@ if (viewerImageContainer && magnifier) {
     });
 
 }
+if (viewerImageContainer && magnifier) {
 
+    function moveTouchMagnifier(event) {
+        const touch = event.touches[0];
+
+        if (!touch) return;
+
+        const rect = viewerImageContainer.getBoundingClientRect();
+
+        let x = touch.clientX - rect.left;
+        let y = touch.clientY - rect.top;
+
+        // Keep the lens inside the painting
+        x = Math.max(0, Math.min(x, rect.width));
+        y = Math.max(0, Math.min(y, rect.height));
+
+        magnifier.classList.add("touch-active");
+
+        magnifier.style.left = x + "px";
+        magnifier.style.top = y + "px";
+
+        const zoom = 2;
+
+        magnifier.style.backgroundSize =
+            rect.width * zoom + "px " +
+            rect.height * zoom + "px";
+
+        magnifier.style.backgroundPosition =
+            (-x * zoom + magnifier.offsetWidth / 2) + "px " +
+            (-y * zoom + magnifier.offsetHeight / 2) + "px";
+    }
+
+    viewerImageContainer.addEventListener("touchstart", function (event) {
+        moveTouchMagnifier(event);
+    }, { passive: true });
+
+    viewerImageContainer.addEventListener("touchmove", function (event) {
+        event.preventDefault();
+        moveTouchMagnifier(event);
+    }, { passive: false });
+
+    viewerImageContainer.addEventListener("touchend", function () {
+        magnifier.classList.remove("touch-active");
+    });
+
+}
  
 
 
