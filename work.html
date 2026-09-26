@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="en"> 
-<head> 
-<title>Shanelle Mokaya — Paintings</title> 
-    <link rel="stylesheet" href="style.css"> 
-</head> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shanelle Mokaya — Paintings</title>
+    <link rel="stylesheet" href="style.css">
+</head>
     <body> 
       <nav>
         <p>SHANELLE MOKAYA</p>
+        <button class="menu-toggle" aria-label="Open menu">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
         <div class="navlinks">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -36,7 +44,7 @@
             <h3>'Built and Broken' </h3>
         </div>
         <div class="painting" data-medium="Oil on canvas" data-year="2025">
-            <img src="images/jazz.jpg" >
+            <img src="images/sikiliza.jpg" >
             <h3>'Sikiliza'</h3>
         </div>
         <div class="painting" data-medium="Oil on canvas" data-year="2025">
@@ -62,7 +70,7 @@
             <h3>'Beauty in Chaos' </h3> 
         </div> 
           <div class="painting" data-medium="Oil on canvas" data-year="2026">
-            <img src="images/flow.jpg" >
+            <img src="images/water.jpg" >
             <h3>'What the Water Remembers'</h3>
         </div>
          <div class="painting" data-medium= "Oil on canvas" data-year="2026">
@@ -75,11 +83,11 @@
     </div>
     </section> 
  <div class="viewer" id="viewer">
-            <button class="viewer-close" id="viewer-close">close</button>
             <div class="viewer-image-container">
             <img class="viewer-image" src="" alt="">
             <div class="magnifier"></div>
             </div>
+             <button class="viewer-close" id="viewer-close">close</button>
         <div class="viewer-info">
             <h2 class="viewer-title"></h2>
             <p class="viewer-medium"></p>

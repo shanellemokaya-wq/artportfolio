@@ -19,7 +19,7 @@ const shopProducts = [
     },
 {id:"sikiliza",
     title: "Sikiliza",
-    image: 'images/jazz.jpg',
+    image: 'images/sikiliza.jpg',
     ratio:"4:5",
 collection: "oil"},
     {id: "soulful-catharsis",
@@ -45,7 +45,7 @@ collection:"oil"},
 
     {id:"what-the-water-remembers",
         title: "What the Water Remembers",
-        image: "images/flow.jpg",
+        image: "images/water.jpg",
         ratio: "5:6",
         collection:"oil"
     },
@@ -551,4 +551,12 @@ if (checkoutStatus === "success") {
 
 if (checkoutStatus === "cancelled") {
     alert("Checkout cancelled. Your cart is still here.");
+}
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".navlinks");
+
+if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", function () {
+        navLinks.classList.toggle("open");
+    });
 }
