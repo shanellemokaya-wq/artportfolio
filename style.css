@@ -628,10 +628,94 @@ text-transform: uppercase;}
     font-size: 12px;
     opacity: 0.6;
 }
+.site-footer {
+    padding: 30px 20px;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.site-footer p {
+    margin: 0;
+}
 /* ---------- MOBILE NAV ---------- */
 
 .menu-toggle {
     display: none;
+}
+/* ---------- POLICIES ---------- */
+.shop-footer {
+    padding: 35px 20px;
+    border-top: 1px solid black;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.shop-footer a {
+    color: black;
+    text-decoration: none;
+}
+
+.shop-footer a:hover {
+    text-decoration: underline;
+}
+
+.shop-footer p {
+    margin: 0;
+}
+.policies {
+    max-width: 900px;
+    margin: 100px auto 140px;
+    padding: 0 35px;
+}
+
+.policies-header {
+    margin-bottom: 100px;
+}
+
+.policies-header h1 {
+    margin: 0 0 15px;
+
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 0.9;
+    letter-spacing: -3px;
+}
+
+.policies-header p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.policy-section {
+    padding: 55px 0;
+    border-top: 1px solid black;
+}
+
+.policy-section h2 {
+    margin: 0 0 35px;
+
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 3px;
+}
+
+.policy-section p {
+    max-width: 700px;
+    margin: 0 0 22px;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.policy-section a {
+    color: black;
 }
 @media (max-width: 900px) {
     #about {
@@ -681,6 +765,31 @@ text-transform: uppercase;}
         cursor: pointer;
         z-index: 50;
     }
+    
+
+    /* POLICIES */
+
+.policies {
+    margin: 60px auto 90px;
+    padding: 0 22px;
+}
+
+.policies-header {
+    margin-bottom: 70px;
+}
+
+.policies-header h1 {
+    font-size: 42px;
+}
+
+.policy-section {
+    padding: 45px 0;
+}
+
+.policy-section p {
+    font-size: 14px;
+    line-height: 1.7;
+}
 
     .menu-toggle span {
         display: block;
