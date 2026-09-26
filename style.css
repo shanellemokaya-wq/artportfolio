@@ -599,14 +599,6 @@ text-transform: uppercase;}
     outline: none;
     border-bottom: 2px solid black;
 }
-.checkout-button {
-    width: 100%;
-    min-height: 50px;
-
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
 
 .remove-item {
     border: none;
@@ -933,19 +925,7 @@ text-transform: uppercase;}
     letter-spacing: 1px;
 }
 
-#shipping-country {
-    width: 100%;
-    min-height: 50px;
 
-    padding: 0 12px;
-    margin-bottom: 14px;
-
-    border: 1px solid black;
-    border-radius: 0;
-    background: transparent;
-
-    font-family: Arial, sans-serif;
-    font-size: 16px;
 }
 
 .checkout-button {
@@ -985,11 +965,4 @@ text-transform: uppercase;}
     border-bottom: 2px solid black;
 }
 
-    .checkout-button {
-        min-height: 50px;
-        font-size: 12px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-}
 .magnifier.touch-active {display: block}
