@@ -641,6 +641,28 @@ text-transform: uppercase;}
 .menu-toggle {
     display: none;
 }
+@media (max-width: 900px) {
+    #about {
+        display: block;
+    }
+
+    .about-visual {
+        width: 100%;
+        height: auto;
+    }
+
+    .about-visual img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .about-text {
+        width: 100%;
+        max-width: none;
+        padding: 55px 35px;
+    }
+}
 
 @media (max-width: 600px) {
 
