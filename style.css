@@ -1056,6 +1056,9 @@ bottom: auto;
 
     /* CART */
 
+    body:has(.cart-drawer.open) nav {
+    display: none;
+}
     .cart-drawer {
         width: 100%;
         padding: 22px;
