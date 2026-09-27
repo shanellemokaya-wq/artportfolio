@@ -200,10 +200,11 @@ cartLink.addEventListener("click", function (event) {
 
     shopViewer.classList.remove("open");
     cartDrawer.classList.add("open");
+    document.body.classList.add("cart-open");
 });
-
 cartClose.addEventListener("click", function () {
     cartDrawer.classList.remove("open");
+    document.body.classList.remove("cart-open");
 });
 
 
@@ -394,7 +395,7 @@ addToCartButton.addEventListener("click", function () {
 
     shopViewer.classList.remove("open");
     cartDrawer.classList.add("open");
-
+document.body.classList.add("cart-open");
     console.log(cart);
 });
 

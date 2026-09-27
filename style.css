@@ -1055,7 +1055,9 @@ bottom: auto;
 
 
     /* CART */
-
+body.cart-open nav {
+    display: none;
+}
     body:has(.cart-drawer.open) nav {
     display: none;
 }
