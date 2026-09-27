@@ -9,6 +9,7 @@ const closeButton = document.querySelector(".viewer-close");
 
 const viewerImageContainer = document.querySelector(".viewer-image-container");
 const magnifier = document.querySelector(".magnifier");
+const magnifierHint = document.querySelector(".magnifier-hint");
 const viewWorkLink = document.querySelector(".view-work");
 if (viewWorkLink) {
 viewWorkLink.addEventListener("click", function (event) {
@@ -46,7 +47,13 @@ magnifier.style.backgroundImage =
         viewerYear.textContent = year;
 
         viewer.classList.add("open");
+if (magnifierHint && window.innerWidth <= 600) {
+    magnifierHint.classList.add("show");
 
+    setTimeout(function () {
+        magnifierHint.classList.remove("show");
+    }, 3000);
+}
     });
 
 });
@@ -88,7 +95,6 @@ if (viewerImageContainer && magnifier) {
         let x = touch.clientX - rect.left;
         let y = touch.clientY - rect.top;
 
-        // Keep the lens inside the painting
         x = Math.max(0, Math.min(x, rect.width));
         y = Math.max(0, Math.min(y, rect.height));
 
@@ -117,10 +123,14 @@ if (viewerImageContainer && magnifier) {
         moveTouchMagnifier(event);
     }, { passive: false });
 
-    viewerImageContainer.addEventListener("touchend", function () {
-        magnifier.classList.remove("touch-active");
-    });
-
+    document.addEventListener("touchstart", function (event) {
+        if (
+            magnifier.classList.contains("touch-active") &&
+            !viewerImageContainer.contains(event.target)
+        ) {
+            magnifier.classList.remove("touch-active");
+        }
+    }, { passive: true });
 }
  
 

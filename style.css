@@ -210,6 +210,7 @@ text-transform: uppercase;}
     width: 100%;
     max-width: 750px;
     margin: 0 auto;
+    
 
     padding: 60px 35px;
 }
@@ -235,6 +236,7 @@ text-transform: uppercase;}
     width: 100%;
     margin: 0 0 27px;
     font-weight: 300;
+    font-family: sans-serif;
 
     font-size: 16px;
     line-height: 1.8;
@@ -244,18 +246,21 @@ text-transform: uppercase;}
 #contact {background-color:  #efe2d5;
           padding:  40px 30px 40px ;
        font-size: 14px;
-       font-weight: 200;
+       font-family: sans-serif;
+       font-weight: 100;
     background-color: rgb(202, 185, 165);}
 #contact h2 {font-size: 25px;
           margin: 0px;
           letter-spacing: -1px;
           text-transform: uppercase;
-          font-weight: 200;
+          font-weight: 100;
+          font-family: sans-serif;
           margin-top: 10px;
           line-height: 0.9;}
 #contact a {text-decoration: none;
           color: black;
           font-weight: 200;
+          font-family: sans-serif;
           letter-spacing: 1px;
           font-size: 14px;}
   #shop {
@@ -765,8 +770,15 @@ text-transform: uppercase;}
         cursor: pointer;
         z-index: 50;
     }
-    
+    .viewer-image-container:hover .magnifier {
+    display: none;
+}
 
+.viewer-image-container .magnifier.touch-active {
+    display: block;
+}
+
+    
     /* POLICIES */
 
 .policies {
@@ -843,7 +855,7 @@ text-transform: uppercase;}
 
 .about-visual {
     width: 100%;
-    height: calc(100vh - 68px);
+    height: calc(100svh - 68px);
 }
 
 .about-visual img {
@@ -914,9 +926,39 @@ text-transform: uppercase;}
 
     align-self: flex-end;
     margin: 18px 0 0 0;
-
+color: black;
+-webkit-text-fill-color:black ;
     font-size: 12px;
     letter-spacing: 1px;
+}
+.magnifier-hint {
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: 18px;
+    transform: translateX(-50%) translateY(8px);
+
+    margin: 0;
+    padding: 8px 12px;
+
+    background: rgba(239, 226, 213, 0.9);
+    color: black;
+
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    opacity: 0;
+    pointer-events: none;
+    z-index: 5;
+
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.magnifier-hint.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
 }
     /* SHOP GRID */
 
@@ -973,14 +1015,14 @@ text-transform: uppercase;}
     position: absolute;
     top: 70vh;
     right: 22px;
-
     transform: none;
     writing-mode: horizontal-tb;
-
     z-index: 21;
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 1px;
+    color: black;
+    -webkit-text-fill-color: black;
 }
 
 
@@ -1074,4 +1116,3 @@ text-transform: uppercase;}
     border-bottom: 2px solid black;
 }
 
-.magnifier.touch-active {display: block}
