@@ -170,10 +170,7 @@ function arrangeGallery() {
         (galleryWidth - gap * (columns - 1)) / columns;
 const columnHeights= [0, 0, 0];
 paintings.forEach(function (painting) {
-    console.log (galleryWidth);
-    console.log (columnWidth);
-    console.log("paintings found: ", paintings.length);
-
+     
     if (painting.classList.contains("span-2")) {
         const leftPairHeight = Math.max(columnHeights[0], columnHeights[1]);
         const rightPairHeight = Math.max(columnHeights[1], columnHeights[2]);
